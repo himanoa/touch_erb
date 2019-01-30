@@ -9,8 +9,9 @@ class TempalteDirTest < Minitest::Test
 
   def test_add_is_create_erb_file
     name = "ttene"
-    @target.add(name)
+    actual = @target.add(name)
     assert File.exist?(File.join(@dir, "#{name}.erb"))
+    assert actual == File.join(@dir, "#{name}.erb")
   end
 
   def test_find_is_find_erb_file_in_root_dir
