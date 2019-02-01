@@ -2,4 +2,5 @@
 
 require "touch_erb/cli"
 
-TouchErb::CLI.start
+ARGV.unshift(TouchErb::CLI.default_task) unless TouchErb::CLI.all_tasks.has_key?(ARGV[0])
+TouchErb::CLI.start(ARGV)
