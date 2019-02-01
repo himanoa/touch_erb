@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require "touch_erb"
+require "touch_erb/cli"
 
 TouchErb::CLI.start
