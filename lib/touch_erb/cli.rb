@@ -4,6 +4,7 @@ require 'erb'
 
 module TouchErb
   class CLI < Thor
+
     def initialize(*args)
       super
       @template_dir = TouchErb::TemplateDir.new
@@ -17,8 +18,12 @@ module TouchErb
     end
 
     desc "<template_name> <output_name>", "Create file to current directory from execute erb template"
-    def touch(i, o)
-      puts "hello hello"
+    option :template_name, :type => :string
+    option :output_name, :type => :string
+    def touch(template_name, output_name)
+      File.open(output_name, 'w') do |f|
+        f.write(ERB.new(@template_dir.find(template_name), nil, "%<>").result())
+      end
     end
 
     default_task :touch
