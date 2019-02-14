@@ -2,6 +2,8 @@
 
 Create from a template file command.
 
+Received the inspiration of [touch-alt](https://github.com/akameco/touch-alt)
+
 ## Installation
 
 ```
