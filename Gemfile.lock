@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     touch_erb (0.1.0)
-      thor
+      thor (~> 0.20)
 
 GEM
   remote: https://rubygems.org/
