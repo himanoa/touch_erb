@@ -1,6 +1,7 @@
 require 'touch_erb'
 require 'thor'
 require 'erb'
+require 'fileutils'
 
 module TouchErb
   class CLI < Thor
@@ -19,10 +20,15 @@ module TouchErb
 
     desc "<template_name> <output_name>", "Create file to current directory from execute erb template"
     option :template_name, :type => :string
-    option :output_name, :type => :string
-    def touch(template_name, output_name)
-      File.open(output_name, 'w') do |f|
-        f.write(ERB.new(@template_dir.find(template_name), nil, "%<>").result())
+    option :output_name, :type => :string, :default => nil
+    def touch(template_name, output_name = nil)
+      dist_name = output_name || template_name
+      if FileTest.exists?(dist_name)
+        FileUtils.touch(dist_name)
+      else
+        File.open(dist_name, 'w') do |f|
+          f.write(ERB.new(@template_dir.find(template_name) || "", nil, "%<>").result())
+        end
       end
     end
 
