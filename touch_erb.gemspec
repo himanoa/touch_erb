@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["himanoa"]
   spec.email         = ["matsunoappy@gmail.com"]
 
-  spec.summary       = %q{touch_erb is better touch tool}
-  spec.description   = %q{:innocent:}
+  spec.description   = %q{Create from a template file command.}
+  spec.summary       = spec.description
   spec.homepage      = "https://github.com/himanoa/touch_erb"
   spec.license       = "MIT"
 

@@ -1,6 +1,6 @@
 # TouchErb
 
-Create from template file.
+Create from a template file command.
 
 ## Installation
 
