@@ -11,7 +11,17 @@ $ gem install touch_erb
 ## Usage
 
 ```
-$ touch_erb
+$ ls ~/.touch_erb
+today.erb
+
+$ cat ~/.touch_erb/today.erb
+<% require 'time' %>
+<%= Time.new.to_s %>
+
+$ touch_erb today
+$ cat today
+2019-02-15 05:13:56 +0900
+
 ```
 
 ## Development
