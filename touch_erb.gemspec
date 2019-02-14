@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["himanoa"]
   spec.email         = ["matsunoappy@gmail.com"]
 
+  spec.summary       = %q{Better touch command}
   spec.description   = %q{Create from a template file command.}
-  spec.summary       = spec.description
   spec.homepage      = "https://github.com/himanoa/touch_erb"
   spec.license       = "MIT"
 
@@ -36,10 +36,10 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "thor"
+  spec.add_dependency "thor", "~> 0.20"
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 12.3"
   spec.add_development_dependency "minitest", "~> 5.0"
-  spec.add_development_dependency "minitest-reporters"
+  spec.add_development_dependency "minitest-reporters", "~> 1.3"
 end
