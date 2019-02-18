@@ -3,5 +3,7 @@ require "touch_erb"
 
 require "minitest/autorun"
 require "minitest/reporters"
+require "minitest/power_assert"
+require "minitest/autorun"
 
 Minitest::Reporters.use!

@@ -17,5 +17,9 @@ module TouchErb
       FileUtils.touch(absolute_path)
       absolute_path
     end
+
+    def list()
+      Dir.glob("*.erb", base: @root).map { |filename| File.basename(filename, '.erb') }
+    end
   end
 end
