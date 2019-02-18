@@ -32,6 +32,11 @@ module TouchErb
       end
     end
 
+    desc "list", "Show erb templates"
+    def list()
+      @template_dir.list.each{ |name| puts name }
+    end
+
     default_task :touch
   end
 end
