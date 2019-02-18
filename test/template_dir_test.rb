@@ -1,4 +1,5 @@
 require "test_helper"
+require "securerandom"
 
 class TempalteDirTest < Minitest::Test
   def setup
@@ -19,6 +20,13 @@ class TempalteDirTest < Minitest::Test
     FileUtils.touch(File.join(@dir, "#{name}.erb"))
     actual = @target.find(name)
     assert actual
+  end
+
+  def test_list_is_list_up_erb_files_in_root_dir
+    expected = (0...10).map { SecureRandom.hex(10) }
+    expected.each {|name|  FileUtils.touch(File.join(@dir, "#{name}.erb")) }
+    actual = @target.list()
+    assert { actual == expected.sort }
   end
 
   def teardown
