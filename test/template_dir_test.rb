@@ -26,7 +26,9 @@ class TempalteDirTest < Minitest::Test
     expected = (0...10).map { SecureRandom.hex(10) }
     expected.each {|name|  FileUtils.touch(File.join(@dir, "#{name}.erb")) }
     actual = @target.list()
-    assert { actual == expected.sort }
+    expected.each do |name|
+      assert actual.find(name)
+    end
   end
 
   def teardown
