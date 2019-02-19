@@ -9,6 +9,10 @@ module TouchErb
     def initialize(*args)
       super
       @template_dir = TouchErb::TemplateDir.new
+      @local_template_dir = TouchErb::TemplateDir.new(
+        File.join(Dir.pwd, '.touch_erb'),
+        false
+      )
     end
 
     desc "add <source>", "Create new erb file"
