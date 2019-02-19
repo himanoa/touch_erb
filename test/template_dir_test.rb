@@ -31,6 +31,16 @@ class TempalteDirTest < Minitest::Test
     end
   end
 
+  def test_initializer_should_be_create_template_directory_when_create_dir_equal_true_and_not_exist_the_directory
+    @target = TouchErb::TemplateDir.new(File.join(@dir, "test"))
+    assert(!Dir.glob(File.join('test'), base:@dir).empty?)
+  end
+
+  def test_initializer_should_not_be_create_template_directory_when_create_dir_equal_false_and_not_exist_the_directory
+    @target = TouchErb::TemplateDir.new(File.join(@dir, "test"), false)
+    assert(Dir.glob(File.join('test'), base:@dir).empty?)
+  end
+
   def teardown
     FileUtils.rmtree(@dir)
   end
