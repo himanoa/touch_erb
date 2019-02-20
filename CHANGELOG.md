@@ -1,3 +1,10 @@
+### v0.3.1 (Thu Feb 21 02:59:35 2019 +0900)
+
+- Generate CHANGELOG (Wed Feb 20 13:00:27 2019 +0900) [77bbb12](https://github.com/himanoa/touch_erb/commit/77bbb1278a934d4691615ddef786296ee8a9b8b7)
+- chore(bugfix): Update gemfile.lock (Wed Feb 20 13:02:05 2019 +0900) [3982ff4](https://github.com/himanoa/touch_erb/commit/3982ff4dd2ed40c87a5d005a1b61276329d0378e)
+- bugfix: Remove double quote from variable name (Thu Feb 21 02:58:07 2019 +0900) [84dfbd4](https://github.com/himanoa/touch_erb/commit/84dfbd4e078c54b35208a7f6ff60363fe05a9173)
+- Release v0.3.1 (Thu Feb 21 02:59:35 2019 +0900) [9490210](https://github.com/himanoa/touch_erb/commit/94902100d4c3fe7d652b73c6900b57fc8b0eaf7c)
+
 ### v0.3.0 (Wed Feb 20 12:56:08 2019 +0900)
 
 - Merge pull request #17 from himanoa/implement-list (Mon Feb 18 09:22:38 2019 +0900) [97d9c79](https://github.com/himanoa/touch_erb/commit/97d9c79a6a60396561b80a5adf07946745d4755c)
