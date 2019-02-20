@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    touch_erb (0.2.0)
+    touch_erb (0.3.0)
       thor (~> 0.20)
 
 GEM
