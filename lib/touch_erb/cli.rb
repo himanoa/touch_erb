@@ -37,7 +37,7 @@ module TouchErb
         FileUtils.touch(dist_name)
       else
         File.open(dist_name, 'w') do |f|
-          f.write(ERB.new(@local_template_dir.find(template_name) || @template_dir.find("template_name") || "", nil, "%<>").result())
+          f.write(ERB.new(@local_template_dir.find(template_name) || @template_dir.find(template_name) || "", nil, "%<>").result())
         end
       end
     end
