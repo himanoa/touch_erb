@@ -12,7 +12,11 @@ module TouchErb
 
     def find(template_name)
       absolute_path = "#{File.join(@root, template_name)}.erb"
-      File.read(absolute_path) if File.exist?(absolute_path)
+      if File.exist?(absolute_path)
+        File.read(absolute_path)
+      else
+        nil
+      end
     end
 
     def add(template_name)

@@ -9,6 +9,7 @@ module TouchErb
     def initialize(*args)
       super
       @template_dir = TouchErb::TemplateDir.new
+
       @local_template_dir = TouchErb::TemplateDir.new(
         File.join(Dir.pwd, '.touch_erb'),
         false
@@ -16,9 +17,14 @@ module TouchErb
     end
 
     desc "add <source>", "Create new erb file"
-    option :source, :type => :string
+    option "local", aliases: "l", type: :boolean
+    method_option :source, :type => :string, :desc => "Create new erb template to {current directory}/.touch_erb/"
     def add(source)
-      path = @template_dir.add(source)
+      target_dir = @template_dir
+      if options[:local]
+        target_dir = @local_template_dir
+      end
+      path = target_dir.add(source)
       system("#{ENV['EDITOR']}", path)
     end
 
@@ -31,14 +37,19 @@ module TouchErb
         FileUtils.touch(dist_name)
       else
         File.open(dist_name, 'w') do |f|
-          f.write(ERB.new(@template_dir.find(template_name) || "", nil, "%<>").result())
+          f.write(ERB.new(@local_template_dir.find(template_name) || @template_dir.find("template_name") || "", nil, "%<>").result())
         end
       end
     end
 
     desc "list", "Show erb templates"
+    option "local", aliases: "l", type: :boolean, desc: "Show templates only local directory .touch_erb"
     def list()
-      @template_dir.list.each{ |name| puts name }
+      if(options[:local])
+        @local_template_dir.list().each{ |name| puts name }
+      else
+        (@template_dir.list() + @local_template_dir.list()).each{ |name| puts name }
+      end
     end
 
     default_task :touch
