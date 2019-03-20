@@ -8,6 +8,10 @@ class TempalteDirTest < Minitest::Test
     @target = TouchErb::TemplateDir.new(@dir)
   end
 
+  def test_initializer_saved_path_info
+    assert @target.root == @dir
+  end
+
   def test_add_is_create_erb_file
     name = "ttene"
     actual = @target.add(name)

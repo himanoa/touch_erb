@@ -2,12 +2,10 @@ require 'fileutils'
 
 module TouchErb
   class TemplateDir
-    def initialize(
-      root_dir = ENV['TOUCH_ERB_ROOT'] || File.join(Dir.home, '.touch_erb'),
-      create_dir = true
-    )
-      FileUtils.mkdir_p(root_dir) if create_dir &&  !Dir.exist?(root_dir)
-      @root =  root_dir
+    attr_accessor :root
+    def initialize(root_path, is_create_dir = true)
+      @root = root_path
+      FileUtils.mkdir_p(root_path) if is_create_dir && !Dir.exist?(root_path)
     end
 
     def find(template_name)

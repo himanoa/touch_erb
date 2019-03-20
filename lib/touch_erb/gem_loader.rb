@@ -1,4 +1,4 @@
-require 'bundler'
+require 'bundler/inline'
 
 module TouchErb
   class GemLoader
@@ -10,9 +10,10 @@ module TouchErb
     end
 
     def load
-      builder = Bundler::Dsl.new
-      builder.eval_gemfile(File.join(@root_dir, GEMFILE_NAME))
-      Bundler::Runtime.new(nil, builder.to_definition(nil, true)).setup.require
+      gemfile_code =  File.read(File.join(@root_dir, GEMFILE_NAME))
+      gemfile do
+        eval gemfile_code
+      end
     end
   end
 end
