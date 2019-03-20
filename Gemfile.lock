@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     touch_erb (0.3.1)
+      bundler (~> 2.0.1)
       thor (~> 0.20)
 
 GEM
