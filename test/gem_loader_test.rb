@@ -1,19 +1,26 @@
 require 'test_helper'
+require 'bundler/inline'
 
 class GemLoaderTest < Minitest::Test
   def setup
-
+    @dir = File.join(__dir__, 'tmp/gemloader_test')
+    FileUtils.mkdir_p(@dir)
+    File.open(File.join(@dir, "Gemfile"), "w") do |f|
+      f.puts <<"EOS"
+source 'https://rubygems.org'
+gem 'to_gunma', '0.0.2'
+EOS
+    end
+    @target = TouchErb::GemLoader.new(@dir)
   end
 
-  def test_load_should_be_require_gems
-    raise NotImplementedError
+  def test_load_should_be_import_gems
+    @target.load()
+    array = [1,2,3].to_gunma!
+    assert(array.to_s == "Arrayは群馬県になりました。")
   end
 
-  def test_parse_should_be_return_gemfile_dsl
-    raise NotImplementedError
-  end
-
-  def test_parse_should_be_raised_GemfileLock_parse_error
-    raise NotImplementedError
+  def teardown
+    FileUtils.rmtree(@dir)
   end
 end
