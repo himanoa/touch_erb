@@ -27,6 +27,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   bundler (~> 2.0)
