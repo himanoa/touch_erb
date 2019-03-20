@@ -33,7 +33,7 @@ DEPENDENCIES
   minitest-power_assert
   minitest-reporters
   rake (~> 12.3)
-  to_gunma (= 0.0.2)
+  to_gunma (~> 0.0.2)
   touch_erb!
 
 BUNDLED WITH

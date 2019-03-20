@@ -43,5 +43,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "minitest-reporters"
   spec.add_development_dependency "minitest-power_assert"
-  spec.add_development_dependency "to_gunma", "0.0.2"
+  spec.add_development_dependency "to_gunma", "~> 0.0.2"
 end
