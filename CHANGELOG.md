@@ -1,3 +1,16 @@
+### HEAD (Sat Mar 23 18:51:59 2019 +0900)
+
+
+
+### v0.4.0 (Sat Mar 23 18:51:59 2019 +0900)
+
+- Update CHANGELOG (Thu Feb 21 03:01:12 2019 +0900) [01e4c9f](https://github.com/himanoa/touch_erb/commit/01e4c9ffe10236d42580d11a0625d896edfbd081)
+- chore: Add activesupport in dependencies (Sat Mar 23 07:51:04 2019 +0900) [d803bab](https://github.com/himanoa/touch_erb/commit/d803bab70f0e20102d6270a98e46e986801ffbc6)
+- feat: Add support for template name and file name in ERB (Sat Mar 23 07:59:22 2019 +0900) [9661627](https://github.com/himanoa/touch_erb/commit/96616272269edf4ea8efb4343ff3b836a5bca6f2)
+- test: Add test (Sat Mar 23 18:36:38 2019 +0900) [4372d30](https://github.com/himanoa/touch_erb/commit/4372d30d538957a2430a848f7832864070f65a66)
+- Merge pull request #25 from himanoa/file-name (Sat Mar 23 18:48:27 2019 +0900) [ffce796](https://github.com/himanoa/touch_erb/commit/ffce7964cdbde0346933a79cd95c34ccd2d1d4c6)
+- Release v0.4.0 (Sat Mar 23 18:51:59 2019 +0900) [321ba61](https://github.com/himanoa/touch_erb/commit/321ba615fa92a7eb5cf0642ecf355bc96db641c8)
+
 ### v0.3.1 (Thu Feb 21 02:59:35 2019 +0900)
 
 - Generate CHANGELOG (Wed Feb 20 13:00:27 2019 +0900) [77bbb12](https://github.com/himanoa/touch_erb/commit/77bbb1278a934d4691615ddef786296ee8a9b8b7)
