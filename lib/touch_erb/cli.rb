@@ -2,6 +2,8 @@ require 'touch_erb'
 require 'thor'
 require 'erb'
 require 'fileutils'
+require 'active_support'
+require 'active_support/core_ext'
 
 module TouchErb
   class CLI < Thor
@@ -32,12 +34,12 @@ module TouchErb
     option :template_name, :type => :string
     option :output_name, :type => :string, :default => nil
     def touch(template_name, output_name = nil)
-      dist_name = output_name || template_name
-      if FileTest.exists?(dist_name)
-        FileUtils.touch(dist_name)
+      file_name = output_name || template_name
+      if FileTest.exists?(file_name)
+        FileUtils.touch(file_name)
       else
-        File.open(dist_name, 'w') do |f|
-          f.write(ERB.new(@local_template_dir.find(template_name) || @template_dir.find(template_name) || "", nil, "%<>").result())
+        File.open(file_name, 'w') do |f|
+          f.write(ERB.new(@local_template_dir.find(template_name) || @template_dir.find(template_name) || "", nil, "%<>").result(binding))
         end
       end
     end
