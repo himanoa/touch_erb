@@ -37,6 +37,19 @@ EOS
     end
   end
 
+  def test_erb_template_not_create_version_file_when_double_arguments
+    FileUtils.cd(@dir) do
+      erb =
+<<EOS
+<%= "apple".pluralize %>
+EOS
+      File.write(File.join('.touch_erb', 'test_template_pluralize.erb'), erb)
+      TouchErb::CLI.start(%w[touch foobar foo])
+      actual = File.exist?('--version')
+      assert{actual == false}
+    end
+  end
+
   def teardown
     FileUtils.rmtree(@dir)
   end
