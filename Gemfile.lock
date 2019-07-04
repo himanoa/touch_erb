@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    touch_erb (0.4.1)
+    touch_erb (0.4.2)
       activesupport
       thor (~> 0.20)
 
