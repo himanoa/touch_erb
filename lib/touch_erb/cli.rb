@@ -37,11 +37,12 @@ module TouchErb
         invoke :help
         return
       end
-      file_name = output_name || template_name
+      write_file_name = output_name || template_name
+      file_name = File.basename(write_file_name, '.*')
       if FileTest.exists?(file_name)
         FileUtils.touch(file_name)
       else
-        File.open(file_name, 'w') do |f|
+        File.open(write_file_name, 'w') do |f|
           f.write(ERB.new(@local_template_dir.find(template_name) || @template_dir.find(template_name) || '', nil, '%<>').result(binding))
         end
       end

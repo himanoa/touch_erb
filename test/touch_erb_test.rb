@@ -18,8 +18,8 @@ class TouchErbTest < Minitest::Test
 <%= file_name %>
 EOS
       File.write(File.join('.touch_erb', 'test_template.erb'), erb)
-      TouchErb::CLI.start(%w[touch test_template])
-      actual = File.read('test_template')
+      TouchErb::CLI.start(%w[touch test_template test_template.js])
+      actual = File.read('test_template.js')
       assert{actual == 'test_template'}
     end
   end
