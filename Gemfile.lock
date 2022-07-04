@@ -19,7 +19,7 @@ GEM
     concurrent-ruby (1.1.9)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
-    minitest (5.14.1)
+    minitest (5.16.2)
     minitest-power_assert (0.3.1)
       minitest
       power_assert (>= 1.1)
