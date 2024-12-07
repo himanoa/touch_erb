@@ -19,7 +19,7 @@ GEM
     concurrent-ruby (1.1.9)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
-    minitest (5.14.1)
+    minitest (5.25.4)
     minitest-power_assert (0.3.1)
       minitest
       power_assert (>= 1.1)
@@ -48,4 +48,4 @@ DEPENDENCIES
   touch_erb!
 
 BUNDLED WITH
-   2.0.1
+   2.5.0
