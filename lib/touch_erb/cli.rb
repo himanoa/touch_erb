@@ -39,7 +39,7 @@ module TouchErb
       end
       write_file_name = output_name || template_name
       file_name = File.basename(write_file_name, '.*')
-      if FileTest.exists?(file_name)
+      if FileTest.exist?(file_name)
         FileUtils.touch(file_name)
       else
         File.open(write_file_name, 'w') do |f|
