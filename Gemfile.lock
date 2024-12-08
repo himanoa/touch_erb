@@ -3,7 +3,7 @@ PATH
   specs:
     touch_erb (0.4.2)
       activesupport
-      thor (>= 0.20, < 2.0)
+      thor (>= 1.2.2)
 
 GEM
   remote: https://rubygems.org/
@@ -62,4 +62,4 @@ DEPENDENCIES
   touch_erb!
 
 BUNDLED WITH
-   2.5.0
+   2.5.23

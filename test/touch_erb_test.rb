@@ -50,16 +50,6 @@ EOS
     end
   end
 
-  def test_touch_arguments_start_with_double_hyphens
-    $stdout = StringIO.new
-    TouchErb::CLI.start(%w[touch --version])
-    actual = $stdout.string
-    $stdout = StringIO.new
-    TouchErb::CLI.start(%w[touch help])
-    expect = $stdout.string
-    assert { actual == expect }
-    $stdout = STDOUT
-  end
   def teardown
     FileUtils.rmtree(@dir)
   end

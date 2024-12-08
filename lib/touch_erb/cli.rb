@@ -43,7 +43,7 @@ module TouchErb
         FileUtils.touch(file_name)
       else
         File.open(write_file_name, 'w') do |f|
-          f.write(ERB.new(@local_template_dir.find(template_name) || @template_dir.find(template_name) || '', nil, '%<>').result(binding))
+          f.write(ERB.new(@local_template_dir.find(template_name) || @template_dir.find(template_name) || '', trim_mode: '%<>').result(binding))
         end
       end
     end
@@ -54,20 +54,24 @@ module TouchErb
       if options[:local]
         @local_template_dir.list.each { |name| puts name }
       else
-        (@template_dir.list + @local_template_dir.list).each { |name| puts name }
-      end
-    end
-
-    desc 'list', 'Show erb templates'
-    option 'local', aliases: 'l', type: :boolean, desc: 'Show templates only local directory .touch_erb'
-    def list
-      if options[:local]
-        @local_template_dir.list.each { |name| puts name }
-      else
-        (@template_dir.list + @local_template_dir.list).each { |name| puts name }
+g       (@template_dir.list + @local_template_dir.list).each { |name| puts name }
       end
     end
 
     default_task :touch
+
+    def self.exit_on_failure?
+      true
+    end
+
+    desc "version", "Print the version"
+    def __version
+      puts  "0.4.2"
+    end
+
+    desc "--version", "Print the version"
+    def version
+      __version
+    end
   end
 end
