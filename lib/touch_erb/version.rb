@@ -1,5 +1,5 @@
 module TouchErb
-  VERSION = "0.4.2"
+  VERSION = "0.4.3"
 
   def self.exit_on_failure?
     true

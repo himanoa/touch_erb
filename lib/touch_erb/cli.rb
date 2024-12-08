@@ -66,7 +66,7 @@ g       (@template_dir.list + @local_template_dir.list).each { |name| puts name 
 
     desc "version", "Print the version"
     def __version
-      puts  "0.4.2"
+      puts  "0.4.3"
     end
 
     desc "--version", "Print the version"
